@@ -1,9 +1,12 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-class DispalyImage extends Component {
-    render() {
-        return <div>Dispaly Image </div>;
-    }
+const DispalyImage = (props) => {
+
+    const images = props.images.map(({id, description, urls}) => {
+        return <img key={id} alt={description} src={urls.regular} />;
+    });
+   
+    return <div>{images}</div>;
 }
 
 export default DispalyImage;
